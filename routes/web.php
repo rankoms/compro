@@ -15,9 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index'])->name('index');
 
 Route::middleware([
     'auth:sanctum',
@@ -32,3 +30,10 @@ Route::middleware([
 Auth::routes();
 
 Route::get('/home', [HomeController::class, 'index'])->name('home');
+
+
+
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('/config_page', [HomeController::class, 'config_page'])->name('config_page');
+    Route::post('/store_config_page', [HomeController::class, 'store_config_page'])->name('store_config_page');
+});
