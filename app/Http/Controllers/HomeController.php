@@ -27,6 +27,12 @@ class HomeController extends Controller
     {
         return view('landing.index');
     }
+
+    public function product_category()
+    {
+        return view('landing.product_category');
+    }
+
     public function config_page()
     {
         $config_page = [

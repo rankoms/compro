@@ -210,7 +210,7 @@ h6 {
     padding: 10px 0 10px 30px;
     font-size: 15px;
     font-weight: 500;
-    color: #fff;
+    color: #45C4A0;
     white-space: nowrap;
     transition: 0.3s;
 }
@@ -226,7 +226,7 @@ h6 {
 .navbar .active,
 .navbar .active:focus,
 .navbar li:hover>a {
-    color: #47b2e4;
+    color: #1048B7;
 }
 
 .navbar .getstarted,
@@ -236,7 +236,7 @@ h6 {
     border-radius: 50px;
     color: #fff;
     font-size: 14px;
-    border: 2px solid #47b2e4;
+    border: 2px solid #1048B7;
     font-weight: 600;
 }
 

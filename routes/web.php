@@ -17,6 +17,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index'])->name('index');
+Route::get('/product-category/{category}', [HomeController::class, 'product_category'])->name('product-category');
+
 
 Route::middleware([
     'auth:sanctum',
@@ -28,9 +30,9 @@ Route::middleware([
     })->name('dashboard');
 });
 
-Auth::routes();
+Auth::routes(['login' => true, 'register' => false, 'reset' => false]);
 
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+// Route::get('/home', [HomeController::class, 'index'])->name('home');
 
 
 
