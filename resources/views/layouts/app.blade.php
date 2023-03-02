@@ -107,9 +107,24 @@
 	<!-- Main JS -->
 	<script src="{{ asset('assets/js/main.js') }}"></script>
 
+	@yield('vendor-script')
+	@yield('js')
 	<!-- Page JS -->
+	<script>
+		function getJSON(url, data, type = 'POST') {
+			return JSON.parse($.ajax({
+				type: type,
+				url: url,
+				data: data,
+				dataType: 'json',
+				global: false,
+				async: false,
+				success: function(msg) {}
+			}).responseText);
+		}
+	</script>
 
-	<script src="{{ asset('assets/js/form-basic-inputs.js') }}"></script>
+	{{-- <script src="{{ asset('assets/js/form-basic-inputs.js') }}"></script> --}}
 </body>
 
 </html>

@@ -1,23 +1,47 @@
 @extends('layouts.app_landing')
 
 @section('content')
+	<style>
+		#bg-kanan {
+			position: absolute;
+			height: 100%;
+			right: 0;
+			background: url('{{ asset('bg1.png') }}');
+			background-repeat: no-repeat;
+			background-position: center;
+			background-size: cover;
+			background-color: #37517e;
+		}
+
+		iframe {
+
+			border: 0;
+			width: 100%;
+			height: 490px !important;
+			border-radius: 45px;
+			margin-top: 24px;
+		}
+	</style>
 	@include('landing.header')
 	<!-- ======= Hero Section ======= -->
-	<section id="hero" class="d-flex align-items-center">
+	<section id="hero" class="d-flex align-items-center" style="position: relative">
+		<div class="col-lg-6" id="bg-kanan">
+
+		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up"
 					data-aos-delay="200">
-					<h1>Better Solutions For Your Business</h1>
-					<h2>We are team of talented designers making websites with Bootstrap</h2>
-					<div class="d-flex justify-content-center justify-content-lg-start">
-						<a href="#about" class="btn-get-started scrollto">Get Started</a>
-						<a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i
-								class="bi bi-play-circle"></i><span>Watch Video</span></a>
+					<div class="visi">
+						<b>Guna Raya Teknik </b>is the leading specialist in air and liquid filtration, particularly in emission control
+						and waste
+						water treatmentapplications.
 					</div>
-				</div>
-				<div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-					<img src="{{ asset('landing/img/illustration/talk.png') }}" class="img-fluid animated" alt="">
+					<hr>
+					<div class="misi">
+						We take pride in our extensive knowledge and expertise about filtration systems, and we have helped a great number
+						of our clients maximize their filtration system efficiency and reduce operation cost.
+					</div>
 				</div>
 			</div>
 		</div>
@@ -25,136 +49,103 @@
 
 	<main id="main">
 		<!-- ======= About Us Section ======= -->
-		<section id="about" class="about">
-			<div class="container" data-aos="fade-up">
-				<div class="row">
-					<div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up"
-						data-aos-delay="200">
-						<h1>Better Solutions For Your Business</h1>
-						<h2>We are team of talented designers making websites with Bootstrap</h2>
-						<div class="d-flex justify-content-center justify-content-lg-start">
-							<a href="#about" class="btn-get-started scrollto">Get Started</a>
-							<a href="https://www.youtube.com/watch?v=jDDaplaOz7Q" class="glightbox btn-watch-video"><i
-									class="bi bi-play-circle"></i><span>Watch Video</span></a>
-						</div>
-					</div>
-					<div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-						<img src="{{ asset('landing/img/hero-img.png') }}" class="img-fluid animated" alt="">
-					</div>
-				</div>
-
-			</div>
-		</section><!-- End About Us Section -->
-
-
-
-		@include('landing.package')
-		<!-- ======= Team Section ======= -->
-		<section id="team" class="team section-bg">
+		<section id="services" class="services">
 			<div class="container" data-aos="fade-up">
 
 				<div class="section-title">
-					<h2>Team</h2>
-					<p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint
-						consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in
-						iste officiis commodi quidem hic quas.</p>
+					<h2>Product Category</h2>
 				</div>
 
 				<div class="row">
-
-					<div class="col-lg-6">
-						<div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="100">
-							<div class="pic"><img src="{{ asset('landing/img/team/team-1.jpg') }}" class="img-fluid" alt="">
+					<div class="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+						<div class="icon-box ganjil">
+							<div class="icon">
+								<img src="{{ asset('storage/category/' . \config('config_page.product_category_1_img')) }}" alt="Filter">
 							</div>
-							<div class="member-info">
-								<h4>Walter White</h4>
-								<span>Chief Executive Officer</span>
-								<p>Explicabo voluptatem mollitia et repellat qui dolorum quasi</p>
-								<div class="social">
-									<a href=""><i class="ri-twitter-fill"></i></a>
-									<a href=""><i class="ri-facebook-fill"></i></a>
-									<a href=""><i class="ri-instagram-fill"></i></a>
-									<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-								</div>
-							</div>
+							<h4><a href="">{{ \config('config_page.product_category_1_title') }}</a></h4>
 						</div>
 					</div>
 
-					<div class="col-lg-6 mt-4 mt-lg-0">
-						<div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="200">
-							<div class="pic"><img src="{{ asset('landing/img/team/team-2.jpg') }}" class="img-fluid" alt="">
+					<div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+						<div class="icon-box genap">
+							<div class="icon">
+								<img src="{{ asset('storage/category/' . \config('config_page.product_category_2_img')) }}" alt="Filter">
 							</div>
-							<div class="member-info">
-								<h4>Sarah Jhonson</h4>
-								<span>Product Manager</span>
-								<p>Aut maiores voluptates amet et quis praesentium qui senda para</p>
-								<div class="social">
-									<a href=""><i class="ri-twitter-fill"></i></a>
-									<a href=""><i class="ri-facebook-fill"></i></a>
-									<a href=""><i class="ri-instagram-fill"></i></a>
-									<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-								</div>
-							</div>
+							<h4><a href="">{{ \config('config_page.product_category_2_title') }}</a></h4>
 						</div>
 					</div>
 
-					<div class="col-lg-6 mt-4">
-						<div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="300">
-							<div class="pic"><img src="{{ asset('landing/img/team/team-3.jpg') }}" class="img-fluid" alt="">
+					<div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="300">
+						<div class="icon-box ganjil">
+							<div class="icon">
+								<img src="{{ asset('storage/category/' . \config('config_page.product_category_3_img')) }}" alt="Filter">
 							</div>
-							<div class="member-info">
-								<h4>William Anderson</h4>
-								<span>CTO</span>
-								<p>Quisquam facilis cum velit laborum corrupti fuga rerum quia</p>
-								<div class="social">
-									<a href=""><i class="ri-twitter-fill"></i></a>
-									<a href=""><i class="ri-facebook-fill"></i></a>
-									<a href=""><i class="ri-instagram-fill"></i></a>
-									<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-								</div>
-							</div>
+							<h4><a href="">{{ \config('config_page.product_category_3_title') }}</a></h4>
 						</div>
 					</div>
 
-					<div class="col-lg-6 mt-4">
-						<div class="member d-flex align-items-start" data-aos="zoom-in" data-aos-delay="400">
-							<div class="pic"><img src="{{ asset('landing/img/team/team-4.jpg') }}" class="img-fluid" alt="">
+					<div class="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-xl-0" data-aos="zoom-in" data-aos-delay="400">
+						<div class="icon-box genap">
+							<div class="icon">
+								<img src="{{ asset('storage/category/' . \config('config_page.product_category_4_img')) }}" alt="Filter">
 							</div>
-							<div class="member-info">
-								<h4>Amanda Jepson</h4>
-								<span>Accountant</span>
-								<p>Dolorum tempora officiis odit laborum officiis et et accusamus</p>
-								<div class="social">
-									<a href=""><i class="ri-twitter-fill"></i></a>
-									<a href=""><i class="ri-facebook-fill"></i></a>
-									<a href=""><i class="ri-instagram-fill"></i></a>
-									<a href=""> <i class="ri-linkedin-box-fill"></i> </a>
-								</div>
-							</div>
+							<h4><a href="">{{ \config('config_page.product_category_4_title') }}</a></h4>
 						</div>
 					</div>
 
-				</div>
-
-			</div>
-		</section><!-- End Team Section -->
-
-		<!-- ======= About Us Section ======= -->
-		<section id="apps" class="apps">
-			<div class="container" data-aos="fade-up">
-				<div class="row">
-					<div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up"
-						data-aos-delay="200">
-						<h1>Better Solutions For Your Business</h1>
-						<h2>We are team of talented designers making websites with Bootstrap</h2>
-					</div>
-					<div class="col-lg-6 order-1 order-lg-2 hero-img" data-aos="zoom-in" data-aos-delay="200">
-						<img src="{{ asset('landing/img/illustration/apps.png') }}" class="img-fluid animated" alt="">
-					</div>
 				</div>
 
 			</div>
 		</section><!-- End About Us Section -->
+
+		<section id="contact" class="contact" style="background-color: #1048B7">
+			<div class="container" data-aos="fade-up">
+
+				<div class="section-title">
+					<h2 class="contact-h2">Contact Us</h2>
+				</div>
+
+				<div class="row location-call">
+					<div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up"
+						data-aos-delay="200">
+						<div class="row">
+							<div class="col-2 align-self-center">
+								<div class="box-icon">
+									<img src="{{ asset('contact/location.svg') }}" alt="">
+								</div>
+							</div>
+							<div class="col description">
+								{{ \config('config_page.location') }}
+							</div>
+
+						</div>
+					</div>
+					<div class="col-lg-6 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up"
+						data-aos-delay="200">
+						<div class="row">
+							<div class="col-2 align-self-center">
+								<div class="box-icon">
+									<img src="{{ asset('contact/call.svg') }}" alt="">
+								</div>
+							</div>
+							<div class="col description">
+								{{ \config('config_page.telp') }}
+							</div>
+
+						</div>
+					</div>
+				</div>
+				<div class="row p-relative">
+					<div class="col-lg-12 col-sm-12 d-flex align-items-stretch p-0 m-0">
+						<iframe src="{{ \config('config_page.maps') }}" frameborder="0" allowfullscreen="" loading="lazy"
+							referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+					</div>
+
+				</div>
+
+			</div>
+		</section><!-- End Contact Section -->
+
 	</main><!-- End #main -->
 	@include('landing.footer')
 @endsection

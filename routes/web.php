@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
@@ -36,4 +37,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::group(['middleware' => 'admin'], function () {
     Route::get('/config_page', [HomeController::class, 'config_page'])->name('config_page');
     Route::post('/store_config_page', [HomeController::class, 'store_config_page'])->name('store_config_page');
+
+    Route::resource('product', ProductController::class);
+    Route::post('/product/list', [ProductController::class, 'list'])->name('product.list');
 });

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Product;
 use Illuminate\Http\Request;
+use Yajra\DataTables\Facades\DataTables;
 
 class ProductController extends Controller
 {
@@ -14,7 +15,7 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        return view('product.index');
     }
 
     /**
@@ -81,5 +82,22 @@ class ProductController extends Controller
     public function destroy(Product $product)
     {
         //
+    }
+
+    public function list()
+    {
+        $job_positions = Product::orderBy('order', 'asc');
+
+
+        return DataTables::of($job_positions)
+            ->addIndexColumn()
+            ->addColumn('action', function ($row) {
+                $button = "";
+
+                return "<div class='d-flex'><button type='button' class='dropdown-item btn-edit' data-id='$row->id' data-name='$row->name' ><i class='bx bx-edit-alt me-1'></i> Edit</button>
+                </div>";
+            })
+            ->rawColumns(['action'])
+            ->make(true);
     }
 }

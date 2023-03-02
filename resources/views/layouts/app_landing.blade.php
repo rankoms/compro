@@ -6,9 +6,9 @@
 	<meta content="width=device-width, initial-scale=1.0" name="viewport">
 
 	@hasSection('title')
-		<title>@yield('title') - eOffice</title>
+		<title>@yield('title') - Guna Raya Teknik</title>
 	@else
-		<title>eOffice</title>
+		<title>Guna Raya Teknik</title>
 	@endif
 
 	<meta content="" name="description">
@@ -35,6 +35,11 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link
 		href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+		rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
 		rel="stylesheet">
 	<!-- Vendor CSS Files -->
 	<link href="{{ asset('landing/vendor/aos/aos.css') }}" rel="stylesheet">
