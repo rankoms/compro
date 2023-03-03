@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\ResponseFormatter;
 use App\Models\Category;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -36,7 +37,19 @@ class HomeController extends Controller
             abort(404);
         }
 
-        return view('landing.product_category', compact('category'));
+        $product = Product::where('category', $category->name)->orderBy('order', 'asc')->get();
+
+        return view('landing.product_category', compact('category', 'product'));
+    }
+    public function product_detail(Request $request, $type)
+    {
+        $product = Product::where('type', $type)->first();
+        if (!$product) {
+            abort(404);
+        }
+
+
+        return view('landing.product_detail', compact('product'));
     }
 
     public function config_page()

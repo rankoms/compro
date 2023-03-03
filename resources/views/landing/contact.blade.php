@@ -36,7 +36,7 @@
 			</div>
 		</div>
 		<div class="row p-relative">
-			<div class="col-lg-12 col-sm-12 d-flex align-items-stretch p-0 m-0">
+			<div class="col-lg-12 col-sm-12 d-flex align-items-stretch m-0 p-sm-2 p-lg-0">
 				<iframe src="{{ \config('config_page.maps') }}" frameborder="0" allowfullscreen="" loading="lazy"
 					referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
 			</div>

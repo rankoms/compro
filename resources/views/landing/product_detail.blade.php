@@ -4,9 +4,9 @@
 	<style>
 		#bg-kanan {
 			position: absolute;
-			height: 100%;
+			/* height: 100%; */
 			right: 0;
-			background: url('{{ asset("storage/category_product/$category->images") }}');
+			background: url('{{ asset("storage/category_product/$product->images") }}');
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
@@ -34,42 +34,29 @@
 					data-aos-delay="200">
 					<span class="align-self-baseline">Product</span>
 					<div class="category-detail align-self-baseline">
-						{{ $category->name }}
+						{{ $product->name }}
 					</div>
 					<hr>
 					<div class="description align-self-baseline">
-						{{ $category->description }}
+						{!! $product->description !!}
+					</div>
+				</div>
+				<div class="col-lg-6 order-1 order-lg-2 hero-img " data-aos="zoom-in" data-aos-delay="200">
+					<img src="{{ asset('bg1.png') }}" class="img-fluid " alt="">
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 d-flex flex-column justify-content-center pt-4 pt-lg-0 order-2 order-lg-1" data-aos="fade-up"
+					data-aos-delay="200">
+
+					<div class="description align-self-baseline">
+						{!! $product->detail !!}
 					</div>
 				</div>
 			</div>
 		</div>
 	</section><!-- End Hero -->
 
-	<main id="main">
-		<!-- ======= About Us Section ======= -->
-		<section id="services" class="services product-category">
-			<div class="container" data-aos="fade-up">
-
-
-				<div class="row gz-2">
-					@foreach ($product as $key => $value)
-						<div class="col-xl-3 col-md-6 d-flex align-items-stretch item mb-4" data-aos="zoom-in" data-aos-delay="100">
-							<a href="{{ route('product-detail', $value->type) }}" class="card" style="width: 18rem;">
-								<img class="card-img-top" src="{{ asset('storage/product/images_1.png') }}" alt="Card image cap">
-								<div class="card-body category-product">
-									<p class="card-text">{{ $value->name }}</p>
-								</div>
-							</a>
-						</div>
-					@endforeach
-				</div>
-
-			</div>
-		</section><!-- End About Us Section -->
-
-
-		@include('landing.contact')
-
-	</main><!-- End #main -->
+	@include('landing.contact')
 	@include('landing.footer')
 @endsection

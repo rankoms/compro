@@ -75,6 +75,7 @@ class DataProductSeeder extends Seeder
         foreach ($arr_nama as $key => $value) :
             $product = new Product();
             $product->name = $value['name'];
+            $product->type = strtolower(str_replace(" ", "-", $value['name']));
             $product->category = $value['category'];
             $product->images = $value['images'];
             $product->save();

@@ -9,7 +9,7 @@ class CreateProductsTable extends Migration
     /**
      * Run the migrations.
      *
-     * @return void
+    * @return void
      */
     public function up()
     {
@@ -17,6 +17,9 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('category')->index();
             $table->string('name')->index();
+            $table->string('type')->index();
+            $table->longText('description')->nullable();
+            $table->longText('detail')->nullable();
             $table->string('images')->index();
             $table->integer('order')->index()->default(1);
             $table->timestamps();
