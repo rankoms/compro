@@ -61,6 +61,28 @@ h6 {
     letter-spacing: 0.5px;
 }
 
+#hero .category-detail {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+    line-height: 70px;
+    /* or 119% */
+    letter-spacing: 0.5px;
+    color: #000000;
+}
+
+#hero .description {
+    font-family: 'Montserrat';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 32px;
+    /* or 178% */
+    letter-spacing: 0.5px;
+    color: #828282;
+}
+
 #preloader {
     position: fixed;
     top: 0;
@@ -318,7 +340,7 @@ h6 {
 */
 
 .mobile-nav-toggle {
-    color: #fff;
+    color: #000;
     font-size: 28px;
     cursor: pointer;
     display: none;
@@ -438,7 +460,7 @@ h6 {
 }
 
 #hero .container {
-    padding-top: 20px;
+    padding-top: 50px;
 }
 
 #hero h1 {
@@ -501,7 +523,7 @@ h6 {
 
 @media (max-width: 991px) {
     #hero {
-        height: 100vh;
+        /* height: 100vh; */
         text-align: center;
     }
     #hero .animated {
@@ -918,6 +940,10 @@ section {
 
 .genap {
     background: #1048B7;
+}
+
+.services .icon-box {
+    width: 100%;
 }
 
 .services .icon-box .icon {
@@ -1509,7 +1535,9 @@ section {
     height: 64px;
     border-radius: 25px;
     position: relative;
-    align-self: center;
+    margin-left: auto;
+    margin-right: auto;
+    /* align-self: center; */
 }
 
 .contact .box-icon img {
@@ -1527,6 +1555,7 @@ section {
 
 .contact .description {
     align-self: center;
+    padding-left: 20px;
 }
 
 .contact .info i {
@@ -1956,4 +1985,12 @@ section {
     #footer .credits {
         padding-top: 4px;
     }
+}
+
+.card .category-product {
+    background: #1048B7;
+    border-radius: 0px 0px 35px 35px;
+    color: #fff;
+    text-align: center;
+    padding: 20px 25px;
 }

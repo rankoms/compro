@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Helpers\ResponseFormatter;
+use App\Models\Category;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
@@ -28,9 +29,14 @@ class HomeController extends Controller
         return view('landing.index');
     }
 
-    public function product_category()
+    public function product_category(Request $request, $category)
     {
-        return view('landing.product_category');
+        $category = Category::where('type', $category)->first();
+        if (!$category) {
+            abort(404);
+        }
+
+        return view('landing.product_category', compact('category'));
     }
 
     public function config_page()

@@ -8,7 +8,7 @@
 					class="img-fluid"></a>
 		</div>
 		<nav class="navbar">
-			<nav id="navbar" class="navbar ms-4">
+			<nav id="navbar" class="navbar">
 				<ul>
 					<li><a class="nav-link scrollto active" href="#hero">Home</a></li>
 					<li><a class="nav-link scrollto" href="#services">Product</a></li>
