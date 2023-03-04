@@ -6,7 +6,7 @@
 			position: absolute;
 			height: 100%;
 			right: 0;
-			background: url('{{ asset("storage/category_product/$category->images") }}');
+			background: url('{{ asset('storage/category_product/images_1.png') }}');
 			background-repeat: no-repeat;
 			background-position: center;
 			background-size: cover;
@@ -41,6 +41,9 @@
 						{{ $category->description }}
 					</div>
 				</div>
+				<div class="col-lg-6 order-1 order-lg-2 hero-img  d-lg-none" data-aos="zoom-in" data-aos-delay="200">
+					<img src="{{ asset('storage/category_product/images_1.png') }}" class="img-fluid animated" alt="">
+				</div>
 			</div>
 		</div>
 	</section><!-- End Hero -->
@@ -55,7 +58,7 @@
 					@foreach ($product as $key => $value)
 						<div class="col-xl-3 col-md-6 d-flex align-items-stretch item mb-4" data-aos="zoom-in" data-aos-delay="100">
 							<a href="{{ route('product-detail', $value->type) }}" class="card" style="width: 18rem;">
-								<img class="card-img-top" src="{{ asset('storage/product/images_1.png') }}" alt="Card image cap">
+								<img class="card-img-top" src="{{ asset('storage/product/' . $value->images) }}" alt="{{ $value->name }}">
 								<div class="card-body category-product">
 									<p class="card-text">{{ $value->name }}</p>
 								</div>

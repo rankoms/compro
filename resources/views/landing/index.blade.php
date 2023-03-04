@@ -51,18 +51,20 @@
 				</div>
 
 				<div class="row">
-					<a href="{{ route('product-category', 'gas-filtration-series') }}"
-						class="col-xl-3 col-md-6 col-sm-6 d-flex justify-content-center mt-4 mt-md-0" data-aos="zoom-in"
-						data-aos-delay="100">
-						<div class="icon-box ganjil">
-							<div class="icon">
-								<img src="{{ asset('storage/category/' . \config('config_page.product_category_1_img')) }}" alt="Filter">
+					@foreach ($category as $key => $value)
+						<a href="{{ route('product-category', $value->type) }}"
+							class="col-xl-3 col-md-6 col-sm-6 d-flex justify-content-center mt-4 mt-md-0" data-aos="zoom-in"
+							data-aos-delay="100">
+							<div class="icon-box {{ $key % 2 == 0 ? 'ganjil' : 'genap' }}">
+								<div class="icon">
+									<img src="{{ asset('storage/category/' . $value->images) }}" alt="Filter">
+								</div>
+								<h4>{{ $value->name }}</h4>
 							</div>
-							<h4>{{ \config('config_page.product_category_1_title') }}</h4>
-						</div>
-					</a>
+						</a>
+					@endforeach
 
-					<a href="{{ route('product-category', 'gas-filtration-series') }}"
+					{{-- <a href="{{ route('product-category', 'gas-filtration-series') }}"
 						class="col-xl-3 col-md-6 col-sm-6 d-flex justify-content-center mt-4 mt-md-0" data-aos="zoom-in"
 						data-aos-delay="200">
 						<div class="icon-box genap">
@@ -93,7 +95,7 @@
 							</div>
 							<h4>{{ \config('config_page.product_category_4_title') }}</h4>
 						</div>
-					</a>
+					</a> --}}
 
 				</div>
 

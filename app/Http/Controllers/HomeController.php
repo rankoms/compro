@@ -27,7 +27,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('landing.index');
+        $category = Category::orderBy('id', 'asc')->get();
+        return view('landing.index', compact('category'));
     }
 
     public function product_category(Request $request, $category)
