@@ -55,6 +55,26 @@
 	@yield('css')
 	@yield('vendor-style')
 
+	<style>
+		.float-whatsapp {
+			position: fixed;
+			width: 60px;
+			height: 60px;
+			bottom: 40px;
+			right: 40px;
+			background-color: #25d366;
+			color: #FFF;
+			border-radius: 50px;
+			text-align: center;
+			font-size: 30px;
+			box-shadow: 2px 2px 3px #999;
+			z-index: 100;
+		}
+
+		.my-float-whatsapp {
+			margin-top: 16px;
+		}
+	</style>
 	<!-- =======================================================
 		* Template Name: Arsha - v4.10.0
 		* Template URL: https://bootstrapmade.com/arsha-free-bootstrap-html-template-corporate/
@@ -65,6 +85,11 @@
 
 <body>
 	@yield('content')
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<a href="https://api.whatsapp.com/send?phone={{ \config('config_page.whatsapp') }}" class="float-whatsapp"
+		target="_blank">
+		<i class="fa fa-whatsapp my-float-whatsapp"></i>
+	</a>
 
 	<div id="preloader"></div>
 	<a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i
